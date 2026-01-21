@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market • Akali</title>
+    <link rel="icon" type="image/png" href="assets/images/akali.png" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/pages.css" />
+  </head>
+  <body>
+    <akali-nav></akali-nav>
+
+    <main class="page">
+      <div class="container">
+        <header class="card panel">
+          <div class="section-title">
+            <h2>Market</h2>
+            <span class="muted">Search, sort, and save favorites</span>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 220px; gap:10px">
+            <input id="search" class="input" placeholder="Search by name or symbol…" />
+            <select id="sort">
+              <option value="cap">Sort: Market cap rank</option>
+              <option value="price">Sort: Price</option>
+              <option value="change">Sort: 24h change</option>
+            </select>
+          </div>
+        </header>
+
+        <section class="section">
+          <div class="grid cols-2">
+            <section class="card panel">
+              <div class="section-title">
+                <h2>Top coins</h2>
+                <div style="display:flex; gap:10px; align-items:center">
+                  <span class="muted" id="topCoinsInfo">Showing top 10</span>
+                  <button class="btn" id="toggleTop" type="button">Show more</button>
+                </div>
+              </div>
+
+              <div style="overflow:auto">
+                <table class="table" id="marketTable">
+                  <thead>
+                    <tr>
+                      <th>Coin</th>
+                      <th>Price</th>
+                      <th>24h</th>
+                      <th>Rank</th>
+                    </tr>
+                  </thead>
+                  <tbody id="marketBody"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="card panel">
+              <div id="toolsMount"></div>
+
+              <hr />
+
+              <div id="alertsMount"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <akali-footer></akali-footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="scripts/market.js"></script>
+  </body>
+</html>

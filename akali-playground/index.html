@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akali</title>
+    <link rel="icon" type="image/png" href="assets/images/akali.png" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/pages.css" />
+  </head>
+  <body>
+    <akali-nav></akali-nav>
+
+    <main class="page">
+      <div class="container">
+        <section class="hero card">
+          <div>
+            <h1>Akali</h1>
+            <p>
+              A compact market dashboard with interactive modules.
+            </p>
+
+            <div class="cta">
+              <a class="btn btn-primary" href="market.html">Open Market</a>
+              <a class="btn" href="games.html">Games</a>
+              <a class="btn" href="memes.html">Memes</a>
+            </div>
+
+            <div class="section" style="margin-top:16px">
+              <div class="section-title">
+                <h2>Live snapshot</h2>
+                <span class="muted">Data: CoinGecko</span>
+              </div>
+              <price-ticker></price-ticker>
+            </div>
+          </div>
+
+          <div class="hero-art">
+            <img src="assets/images/akali.png" alt="Akali" />
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="grid cols-2">
+            <div class="card panel">
+              <div class="section-title">
+                <h2>Market overview</h2>
+                <span class="muted">BTC + ETH</span>
+              </div>
+              <div id="marketMood" class="muted">Loading…</div>
+              <div style="margin-top:12px" class="grid" id="miniPrices">
+                <div class="row">
+                  <div class="muted">Bitcoin</div>
+                  <div id="btcMini" class="muted">—</div>
+                </div>
+                <div class="row">
+                  <div class="muted">Ethereum</div>
+                  <div id="ethMini" class="muted">—</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card panel" id="homeStats"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <akali-footer></akali-footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="scripts/home.js"></script>
+  </body>
+</html>
